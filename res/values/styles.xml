@@ -1,0 +1,12 @@
+<resources>
+
+    <style name="AppTheme" parent="android:Theme.Light" />
+
+    <style name="greyBackground1">
+        <item name="android:background">#A9A9A9</item>
+    </style>
+    
+    <style name="greyBackground2">
+        <item name="android:background">#C0C0C0</item>
+    </style>
+</resources>

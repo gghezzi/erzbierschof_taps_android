@@ -1,0 +1,16 @@
+<resources>
+    <string name="last_update"></string>
+    <string name="no_updates">The tap list has not changed since last you checked</string>
+	<string name="refresh">Refresh the tap list</string>
+    <string name="by">by</string>
+    <string name="in">in</string>
+    <string name="app_name">Erzbierschof\'s Taps</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_taps">Currently on tap in </string>
+    <string name="loading_taps">Loading what\'s on tap</string>
+    <string name="wrong_url">Somehow, the URL of the Erzbierschof OnTap page is incorrect, contact the administrator</string>
+    <string name="ontap_read_error">Could not get an updated tap list.\nWill display the older one instead.\nPlease check that you have a connection.</string>
+    <string name="title_activity_main">MainActivity</string>
+
+</resources>
