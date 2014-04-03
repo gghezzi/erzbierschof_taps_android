@@ -75,23 +75,6 @@ public class TapsActivity extends Activity {
 			return false;
 		}
 	}
-
-//	public void findBeer(View v){
-//		v.setBackgroundColor(Color.RED);
-//		Intent intent = new Intent("android.intent.action.MAIN");
-//	    intent.addCategory("android.intent.category.LAUNCHER");
-//	    PackageManager m = this.getApplicationContext().getPackageManager();
-//	    for (ResolveInfo i : m.queryIntentActivities(intent, 0)) {
-//	    	if (i.activityInfo.name.equals("com.ratebeer.android.gui.Home_")) {
-//	    		Intent rateBeerIntent = new Intent("android.intent.action.MAIN");
-//	    		rateBeerIntent.addCategory("android.intent.category.LAUNCHER");
-//	    		rateBeerIntent.setComponent(new ComponentName(i.activityInfo.packageName, i.activityInfo.name));
-//	    		rateBeerIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//	    		rateBeerIntent.putExtra(SearchManager.QUERY, ((TextView)v.findViewById(R.id.top_left_text)).getText());
-//	    		startActivity(rateBeerIntent);
-//	    	}
-//	    }
-//	}
 	
 	private class BeerInfo {
 		private String name;
@@ -279,8 +262,9 @@ public class TapsActivity extends Activity {
 			try {
 				Connection conn = Jsoup.connect(barUrl).timeout(10000);
 				Document doc = conn.get();
-				String newDate = doc.select(":containsOwn(Letztes Update)").get(0)
-						.text().replace("Letztes Update: ", "").trim();
+				String newDate = doc.select(":containsOwn(Update)").get(0).text();
+				newDate = newDate.substring(newDate.indexOf("Update: ") + 8).trim();
+				//replace("Update: ", "").trim();
 				String oldDate = prefs.getString(barId + "_" + "last_update", null);
 				if (oldDate == null || oldDate != newDate) {
 					this.noUpdate = false;
